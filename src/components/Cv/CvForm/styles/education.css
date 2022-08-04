@@ -1,0 +1,14 @@
+.education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+input[type="date"]::before {
+  color: #999;
+  content: attr(placeholder) ": ";
+  margin-right: 0.5em;
+}
+input[type="date"]:focus::before {
+  content: "" !important;
+}

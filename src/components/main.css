@@ -1,0 +1,7 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: space-between;
+  background-color: #9ca3af;
+}

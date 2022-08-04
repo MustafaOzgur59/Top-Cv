@@ -1,0 +1,26 @@
+.cvPreview-container {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  padding: 2rem;
+  gap: 1rem;
+  box-shadow: 0px 5px 15px 5px rgb(0 0 0 / 50%);
+  background-color: aqua;
+}
+
+.preview-header-container {
+  background-color: blueviolet;
+}
+
+.PreviewMain-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.PreviewContent-container {
+  width: 70%;
+}
+
+.PreviewFotoCard-container {
+  width: 30%;
+}
