@@ -1,23 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
 import CvForm from "./Cv/CvForm/CvForm";
 import CvPreview from "./Cv/CvPreview/CvPreview";
 import "./main.css";
 import emptyCv from "./HelperFuncs/EmptyCv";
-export default class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cv: emptyCv,
-    };
-  }
+import { useState } from "react";
+export default function Main() {
+  const [cv, setCv] = useState(emptyCv);
 
-  render() {
-    console.log(this.state.cv);
-    return (
-      <div className="main">
-        <CvForm cv={this.state.cv} />
-        <CvPreview></CvPreview>
-      </div>
-    );
-  }
+  const handlePersonalChange = (event) => {
+    console.log(event.target);
+    console.log(event.target.value);
+    const { name, value, type } = event.target;
+    setCv((prevState) => ({
+      ...prevState,
+      personalInfo: {
+        ...prevState.personalInfo,
+        [name]: value,
+      },
+    }));
+  };
+
+  return (
+    <div className="main">
+      <CvForm cv={cv} onChangePersonal={handlePersonalChange} />
+      <CvPreview></CvPreview>
+    </div>
+  );
 }
