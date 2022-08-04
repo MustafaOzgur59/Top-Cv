@@ -1,7 +1,12 @@
 import React from "react";
 import "./styles/experience.css";
 import ExperienceCard from "./ExperienceCard";
-export default function Experience({ experiences, onChange }) {
+export default function Experience({
+  experiences,
+  onChange,
+  onAddExperience,
+  onDeleteExperience,
+}) {
   return (
     <div>
       <h1>Experience</h1>
@@ -10,11 +15,13 @@ export default function Experience({ experiences, onChange }) {
           <ExperienceCard
             key={exp.id}
             onChange={onChange}
+            onDelete={onDeleteExperience}
             id={exp.id}
             experience={exp}
           ></ExperienceCard>
         );
       })}
+      <button onClick={onAddExperience}>Add</button>
     </div>
   );
 }

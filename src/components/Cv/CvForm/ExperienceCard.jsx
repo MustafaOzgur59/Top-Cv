@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ExperienceCard({ id, experience, onChange }) {
+export default function ExperienceCard({ id, experience, onChange, onDelete }) {
   return (
     <div className="experience-container">
       <input
@@ -39,7 +39,7 @@ export default function ExperienceCard({ id, experience, onChange }) {
         onChange={(e) => onChange(e, id)}
       />
 
-      <button onClick={() => console.log("İmplement Delete")}>Delete</button>
+      <button onClick={(e) => onDelete(e, id)}>Delete</button>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import CvPreview from "./Cv/CvPreview/CvPreview";
 import "./main.css";
 import emptyCv from "./HelperFuncs/EmptyCv";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 export default function Main() {
   const [cv, setCv] = useState(emptyCv);
 
@@ -63,12 +64,91 @@ export default function Main() {
     });
     console.log(cv.experiences);
   };
+  const handleExperienceAddition = (event) => {
+    setCv((prevState) => ({
+      ...prevState,
+      experiences: [
+        ...prevState.experiences,
+        {
+          id: uuidv4(),
+          position: "",
+          company: "",
+          city: "",
+          from: "",
+          to: "",
+        },
+      ],
+    }));
+  };
+  const handleExperienceDelete = (event, id) => {
+    setCv((prevState) => {
+      return {
+        ...prevState,
+        experiences: prevState.experiences.filter((experience) => {
+          return experience.id !== id;
+        }),
+      };
+    });
+  };
+
+  const handleEducationChange = (event, id) => {
+    const { name, type, value } = event.target;
+    setCv((prevState) => {
+      return {
+        ...prevState,
+        educations: prevState.educations.map((education) => {
+          if (education.id === id) {
+            return { ...education, [name]: value };
+          } else {
+            return education;
+          }
+        }),
+      };
+    });
+  };
+
+  const handleEducationAddition = (event) => {
+    setCv((prevState) => {
+      return {
+        ...prevState,
+        educations: [
+          ...prevState.educations,
+          {
+            id: uuidv4(),
+            universityName: "",
+            city: "",
+            degree: "",
+            subject: "",
+            from: "",
+            to: "",
+          },
+        ],
+      };
+    });
+  };
+
+  const handleEducationDelete = (event, id) => {
+    setCv((prevState) => {
+      return {
+        ...prevState,
+        educations: prevState.educations.filter((education) => {
+          return education.id !== id;
+        }),
+      };
+    });
+  };
+
   return (
     <div className="main">
       <CvForm
         cv={cv}
         onChangePersonal={handlePersonalChange}
+        onChangeEducation={handleEducationChange}
+        onAddEducation={handleEducationAddition}
+        onDeleteEducation={handleEducationDelete}
         onChangeExperience={handleExperienceChange}
+        onAddExperience={handleExperienceAddition}
+        onDeleteExperience={handleExperienceDelete}
       />
       <CvPreview cv={cv}></CvPreview>
     </div>

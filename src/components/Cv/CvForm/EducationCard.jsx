@@ -1,16 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class EducationCard extends Component {
-  render() {
-    return (
-      <div className="education-container">
-        <input type="text" placeholder="University Name" />
-        <input type="text" placeholder="City" />
-        <input type="text" placeholder="Degree" />
-        <input type="text" placeholder="Subject" />
-        <input type="date" placeholder="From" />
-        <input type="date" placeholder="To" />
-      </div>
-    );
-  }
+export default function EducationCard({ id, onChange, onDelete }) {
+  return (
+    <div className="education-container">
+      <input type="text" placeholder="University Name" name="universityName" />
+      <input type="text" placeholder="City" name="city" />
+      <input type="text" placeholder="Degree" name="degree" />
+      <input type="text" placeholder="Subject" name="subject" />
+      <input type="date" placeholder="From" name="from" />
+      <input type="date" placeholder="To" name="to" />
+      <button onClick={(e) => onDelete(e, id)}>Delete</button>
+    </div>
+  );
 }
