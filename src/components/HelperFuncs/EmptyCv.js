@@ -11,7 +11,7 @@ const emptyCv = {
     email: "",
     description: "",
   },
-  experience: [
+  experiences: [
     {
       id: uuidv4(),
       position: "",

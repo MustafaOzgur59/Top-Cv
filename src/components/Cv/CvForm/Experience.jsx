@@ -1,17 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 import "./styles/experience.css";
-
-export default class Experience extends Component {
-  render() {
-    return (
-      <div className="experience-container">
-        <h1>Experience</h1>
-        <input type="text" placeholder="Position" />
-        <input type="text" placeholder="Company" />
-        <input type="text" placeholder="City" />
-        <input type="date" placeholder="From" />
-        <input type="date" placeholder="To" />
-      </div>
-    );
-  }
+import ExperienceCard from "./ExperienceCard";
+export default function Experience({ experiences, onChange }) {
+  return (
+    <div>
+      <h1>Experience</h1>
+      {experiences.map((exp) => {
+        return (
+          <ExperienceCard
+            key={exp.id}
+            onChange={onChange}
+            id={exp.id}
+            experience={exp}
+          ></ExperienceCard>
+        );
+      })}
+    </div>
+  );
 }

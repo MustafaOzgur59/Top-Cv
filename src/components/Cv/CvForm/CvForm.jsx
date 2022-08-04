@@ -3,9 +3,7 @@ import Personal from "./Personal";
 import Education from "./Education";
 import Experience from "./Experience";
 import "./styles/cvform.css";
-export default function CvForm(props) {
-  const { cv, onChangePersonal } = props;
-
+export default function CvForm({ cv, onChangePersonal, onChangeExperience }) {
   return (
     <div className="cv-form">
       <Personal
@@ -13,7 +11,10 @@ export default function CvForm(props) {
         onChange={onChangePersonal}
       ></Personal>
       <Education></Education>
-      <Experience></Experience>
+      <Experience
+        experiences={cv.experiences}
+        onChange={onChangeExperience}
+      ></Experience>
     </div>
   );
 }

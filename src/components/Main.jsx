@@ -46,9 +46,30 @@ export default function Main() {
     reader.readAsDataURL(file);
   };
 
+  const handleExperienceChange = (event, id) => {
+    const { name, type, value } = event.target;
+
+    setCv((prevState) => {
+      return {
+        ...prevState,
+        experiences: prevState.experiences.map((experience) => {
+          if (experience.id === id) {
+            return { ...experience, [name]: value };
+          } else {
+            return experience;
+          }
+        }),
+      };
+    });
+    console.log(cv.experiences);
+  };
   return (
     <div className="main">
-      <CvForm cv={cv} onChangePersonal={handlePersonalChange} />
+      <CvForm
+        cv={cv}
+        onChangePersonal={handlePersonalChange}
+        onChangeExperience={handleExperienceChange}
+      />
       <CvPreview cv={cv}></CvPreview>
     </div>
   );
