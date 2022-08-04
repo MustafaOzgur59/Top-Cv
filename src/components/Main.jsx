@@ -11,6 +11,14 @@ export default function Main() {
     console.log(event.target);
     console.log(event.target.value);
     const { name, value, type } = event.target;
+    console.log(cv);
+    console.log(type);
+    if (type === "file") {
+      onChangePersonalPicture(event);
+      console.log("shiiiert");
+      return;
+    }
+
     setCv((prevState) => ({
       ...prevState,
       personalInfo: {
@@ -20,10 +28,28 @@ export default function Main() {
     }));
   };
 
+  const onChangePersonalPicture = (e) => {
+    const { name } = e.target;
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      setCv((prevState) => ({
+        ...prevState,
+        personalInfo: {
+          ...prevState.personalInfo,
+          [name]: reader.result,
+        },
+      }));
+    };
+    reader.readAsDataURL(file);
+  };
+
   return (
     <div className="main">
       <CvForm cv={cv} onChangePersonal={handlePersonalChange} />
-      <CvPreview></CvPreview>
+      <CvPreview cv={cv}></CvPreview>
     </div>
   );
 }

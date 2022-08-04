@@ -1,7 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class PreviewFotoCard extends Component {
-  render() {
-    return <div className="PreviewFotoCard-container">PreviewFotoCard</div>;
-  }
+export default function PreviewFotoCard({ cv }) {
+  return (
+    <div className="PreviewFotoCard-container">
+      <img src={cv.photo} alt="" />
+    </div>
+  );
 }

@@ -20,6 +20,8 @@ export default function Personal({ personalInfo, onChange }) {
           type="file"
           placeholder="Photo"
           name="photo"
+          onChange={(e) => onChange(e)}
+          // value={personalInfo.photo}
         />
       </label>
       <input type="text" placeholder="Address" name="address" />
