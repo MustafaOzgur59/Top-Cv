@@ -10,14 +10,11 @@ export default function Main() {
   const [cv, setCv] = useState(emptyCv);
 
   const handlePersonalChange = (event) => {
-    console.log(event.target);
-    console.log(event.target.value);
     const { name, value, type } = event.target;
-    console.log(cv);
-    console.log(type);
+
     if (type === "file") {
       onChangePersonalPicture(event);
-      console.log("shiiiert");
+
       return;
     }
 
@@ -63,7 +60,6 @@ export default function Main() {
         }),
       };
     });
-    console.log(cv.experiences);
   };
   const handleExperienceAddition = (event) => {
     setCv((prevState) => ({
@@ -107,7 +103,6 @@ export default function Main() {
         }),
       };
     });
-    console.log(cv.educations);
   };
 
   const handleEducationAddition = (event) => {
@@ -146,9 +141,11 @@ export default function Main() {
   });
 
   const handleReset = () => {
-    setCv(emptyCv);
+    setCv({
+      ...emptyCv,
+    });
   };
-
+  console.log(cv);
   return (
     <div className="main">
       <CvForm

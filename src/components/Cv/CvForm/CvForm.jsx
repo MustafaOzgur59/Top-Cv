@@ -34,8 +34,8 @@ export default function CvForm({
         onDeleteExperience={onDeleteExperience}
       ></Experience>
       <div className="utilityButtons">
-        <button onClick={(e) => handleReset()}>Reset</button>
-        <button onClick={() => handlePrint()}>Generate PDF</button>
+        <button onClick={(e) => handleReset(e)}>Reset</button>
+        <button onClick={(e) => handlePrint(e)}>Generate PDF</button>
       </div>
     </div>
   );

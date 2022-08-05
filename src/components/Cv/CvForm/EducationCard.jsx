@@ -1,12 +1,13 @@
 import React from "react";
 
-export default function EducationCard({ id, onChange, onDelete }) {
+export default function EducationCard({ education, id, onChange, onDelete }) {
   return (
     <div className="education-card-container">
       <input
         type="text"
         placeholder="University Name"
         name="universityName"
+        value={education.universityName}
         onChange={(e) => {
           onChange(e, id);
         }}
@@ -15,6 +16,7 @@ export default function EducationCard({ id, onChange, onDelete }) {
         type="text"
         placeholder="City"
         name="city"
+        value={education.city}
         onChange={(e) => {
           onChange(e, id);
         }}
@@ -23,6 +25,7 @@ export default function EducationCard({ id, onChange, onDelete }) {
         type="text"
         placeholder="Degree"
         name="degree"
+        value={education.degree}
         onChange={(e) => {
           onChange(e, id);
         }}
@@ -31,6 +34,7 @@ export default function EducationCard({ id, onChange, onDelete }) {
         type="text"
         placeholder="Subject"
         name="subject"
+        value={education.subject}
         onChange={(e) => {
           onChange(e, id);
         }}
@@ -39,6 +43,7 @@ export default function EducationCard({ id, onChange, onDelete }) {
         type="date"
         placeholder="From"
         name="from"
+        value={education.from}
         onChange={(e) => {
           onChange(e, id);
         }}
@@ -47,6 +52,7 @@ export default function EducationCard({ id, onChange, onDelete }) {
         type="date"
         placeholder="To"
         name="to"
+        value={education.to}
         onChange={(e) => {
           onChange(e, id);
         }}

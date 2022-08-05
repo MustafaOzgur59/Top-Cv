@@ -1,8 +1,6 @@
 import React from "react";
 
 function PreviewEducationCard({ education }) {
-  console.log(education);
-  console.log("Wtf");
   return (
     <div className="preview-education-card-container">
       <div className="fromTo">

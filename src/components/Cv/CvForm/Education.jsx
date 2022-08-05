@@ -14,6 +14,7 @@ export default function Education({
       {educations.map((education) => {
         return (
           <EducationCard
+            education={education}
             key={education.id}
             id={education.id}
             onChange={onChangeEducation}
