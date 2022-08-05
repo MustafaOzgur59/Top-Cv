@@ -39,7 +39,9 @@ export default function ExperienceCard({ id, experience, onChange, onDelete }) {
         onChange={(e) => onChange(e, id)}
       />
 
-      <button onClick={(e) => onDelete(e, id)}>Delete</button>
+      <button onClick={(e) => onDelete(e, id)} className="delete-btn">
+        Delete
+      </button>
     </div>
   );
 }

@@ -15,3 +15,36 @@
   flex-direction: column;
   gap: 0.25rem;
 }
+
+.resetCv {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
+.printCv {
+  background-color: rgb(0, 180, 0);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
+.add-btn {
+  background-color: rgba(24, 23, 23, 0.9);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
+.delete-btn {
+  background-color: rgba(24, 23, 23, 0.9);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+  margin-top: 0.5rem;
+}

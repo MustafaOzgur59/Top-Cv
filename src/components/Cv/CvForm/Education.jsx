@@ -22,7 +22,9 @@ export default function Education({
           />
         );
       })}
-      <button onClick={(e) => onAddEducation(e)}>Add</button>
+      <button onClick={(e) => onAddEducation(e)} className="add-btn">
+        Add
+      </button>
     </div>
   );
 }

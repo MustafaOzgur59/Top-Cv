@@ -21,7 +21,9 @@ export default function Experience({
           ></ExperienceCard>
         );
       })}
-      <button onClick={onAddExperience}>Add</button>
+      <button onClick={onAddExperience} className="add-btn">
+        Add
+      </button>
     </div>
   );
 }

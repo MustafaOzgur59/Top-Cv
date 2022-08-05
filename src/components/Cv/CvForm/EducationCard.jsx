@@ -57,7 +57,9 @@ export default function EducationCard({ education, id, onChange, onDelete }) {
           onChange(e, id);
         }}
       />
-      <button onClick={(e) => onDelete(e, id)}>Delete</button>
+      <button onClick={(e) => onDelete(e, id)} className="delete-btn">
+        Delete
+      </button>
     </div>
   );
 }
