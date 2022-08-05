@@ -9,7 +9,7 @@ export default function Education({
   onDeleteEducation,
 }) {
   return (
-    <div>
+    <div className="education-container">
       <h1>Education</h1>
       {educations.map((education) => {
         return (

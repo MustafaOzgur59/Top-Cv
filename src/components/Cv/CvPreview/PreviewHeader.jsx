@@ -1,11 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class PreviewHeader extends Component {
-  render() {
-    return (
-      <div className="preview-header-container">
-        <h1>Preview Header</h1>
-      </div>
-    );
-  }
+export default function PreviewHeader({ cv }) {
+  return (
+    <div className="preview-header-container">
+      <h1>{cv.personalInfo.firstName + " " + cv.personalInfo.lastName}</h1>
+      <p>{cv.personalInfo.title}</p>
+    </div>
+  );
 }

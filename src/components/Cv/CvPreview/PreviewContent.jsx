@@ -1,7 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
+import PreviewExperienceCard from "./PreviewExperienceCard";
+import PreviewEducationCard from "./PreviewEducationCard";
 
-export default class PreviewContent extends Component {
-  render() {
-    return <div className="PreviewContent-container">PreviewContent</div>;
-  }
+export default function PreviewContent({ cv }) {
+  return (
+    <div className="PreviewContent-container">
+      PreviewContent
+      <section>Description</section>
+      {cv.experiences.map((experience) => {
+        return <PreviewExperienceCard experience={experience} />;
+      })}
+      {cv.educations.map((education) => {
+        return <PreviewEducationCard education={education} />;
+      })}
+    </div>
+  );
 }

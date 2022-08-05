@@ -11,8 +11,20 @@ export default function Personal({ personalInfo, onChange }) {
         onChange={(e) => onChange(e)}
         value={personalInfo.firstName}
       />
-      <input type="text" placeholder="Last Name" name="lastName" />
-      <input type="text" placeholder="Title" name="title" />
+      <input
+        type="text"
+        placeholder="Last Name"
+        name="lastName"
+        onChange={(e) => onChange(e)}
+        value={personalInfo.lastName}
+      />
+      <input
+        type="text"
+        placeholder="Title"
+        name="title"
+        onChange={(e) => onChange(e)}
+        value={personalInfo.title}
+      />
       <label htmlFor="">
         Photo:
         <input
@@ -24,15 +36,35 @@ export default function Personal({ personalInfo, onChange }) {
           // value={personalInfo.photo}
         />
       </label>
-      <input type="text" placeholder="Address" name="address" />
-      <input type="text" placeholder="Phone number" name="phoneNumber" />
-      <input type="email" placeholder="email" name="email" />
+      <input
+        type="text"
+        placeholder="Address"
+        name="address"
+        onChange={(e) => onChange(e)}
+        value={personalInfo.address}
+      />
+      <input
+        type="text"
+        placeholder="Phone number"
+        name="phoneNumber"
+        onChange={(e) => onChange(e)}
+        value={personalInfo.phoneNumber}
+      />
+      <input
+        type="email"
+        placeholder="email"
+        name="email"
+        onChange={(e) => onChange(e)}
+        value={personalInfo.email}
+      />
       <textarea
         name="description"
         placeholder="Description"
         id="descriptionTextArea"
         cols="30"
         rows="5"
+        onChange={(e) => onChange(e)}
+        value={personalInfo.description}
       ></textarea>
     </div>
   );

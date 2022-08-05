@@ -8,7 +8,7 @@ export default function Experience({
   onDeleteExperience,
 }) {
   return (
-    <div>
+    <div className="experience-container">
       <h1>Experience</h1>
       {experiences.map((exp) => {
         return (

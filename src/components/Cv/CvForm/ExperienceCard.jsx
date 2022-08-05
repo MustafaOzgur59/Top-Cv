@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ExperienceCard({ id, experience, onChange, onDelete }) {
   return (
-    <div className="experience-container">
+    <div className="experience-card-container">
       <input
         type="text"
         placeholder="Position"

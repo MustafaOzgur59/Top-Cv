@@ -6,7 +6,7 @@ import PreviewMain from "./PreviewMain";
 export default function CvPreview({ cv }) {
   return (
     <div className="cvPreview-container">
-      <PreviewHeader></PreviewHeader>
+      <PreviewHeader cv={cv}></PreviewHeader>
       <PreviewMain cv={cv}></PreviewMain>
     </div>
   );

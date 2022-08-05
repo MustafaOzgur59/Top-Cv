@@ -4,7 +4,7 @@ import PreviewFotoCard from "./PreviewFotoCard";
 export default function PreviewMain({ cv }) {
   return (
     <div className="PreviewMain-container">
-      <PreviewContent></PreviewContent>
+      <PreviewContent cv={cv}></PreviewContent>
       <PreviewFotoCard cv={cv}></PreviewFotoCard>
     </div>
   );

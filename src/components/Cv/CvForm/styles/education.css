@@ -4,6 +4,16 @@
   gap: 0.25rem;
 }
 
+.education-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.8);
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.25rem;
+  border-radius: 10px;
+}
+
 input[type="date"]::before {
   color: #999;
   content: attr(placeholder) ": ";

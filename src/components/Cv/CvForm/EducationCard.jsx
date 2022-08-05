@@ -2,7 +2,7 @@ import React from "react";
 
 export default function EducationCard({ id, onChange, onDelete }) {
   return (
-    <div className="education-container">
+    <div className="education-card-container">
       <input type="text" placeholder="University Name" name="universityName" />
       <input type="text" placeholder="City" name="city" />
       <input type="text" placeholder="Degree" name="degree" />
