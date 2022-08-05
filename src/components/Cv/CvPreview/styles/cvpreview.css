@@ -3,12 +3,11 @@
   flex-direction: column;
   width: 210mm;
   height: 297mm;
+  position: sticky;
+  top: 10px;
   gap: 1rem;
   box-shadow: 0px 5px 15px 5px rgb(0 0 0 / 50%);
   background-color: #fefeff;
-  position: sticky;
-  top: 20px;
-  margin-left: 20px;
 }
 
 .preview-header-container {
@@ -21,11 +20,12 @@
   display: flex;
   padding: 0 0.75rem;
   gap: 1rem;
-  overflow-wrap: break-word;
+  max-width: 210mm;
 }
 
 .PreviewContent-container {
   width: 70%;
+  max-width: 150mm;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -39,12 +39,12 @@
 }
 
 .PreviewFotoCard-container {
-  display: flex;
-  flex-direction: column;
+  max-width: 60mm;
 }
 
 .PreviewFotoCard-container p {
   margin: 0;
+  overflow-wrap: break-word;
 }
 .PreviewFotoCard-container h4 {
   margin: 0.25rem 0;
