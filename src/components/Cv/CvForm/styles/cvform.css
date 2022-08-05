@@ -8,3 +8,10 @@
   background-color: #f3f4f6;
   border-radius: 10px;
 }
+
+.utilityButtons {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}

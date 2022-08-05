@@ -3,8 +3,9 @@ import CvForm from "./Cv/CvForm/CvForm";
 import CvPreview from "./Cv/CvPreview/CvPreview";
 import "./main.css";
 import emptyCv from "./HelperFuncs/EmptyCv";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { useReactToPrint } from "react-to-print";
 export default function Main() {
   const [cv, setCv] = useState(emptyCv);
 
@@ -48,7 +49,7 @@ export default function Main() {
   };
 
   const handleExperienceChange = (event, id) => {
-    const { name, type, value } = event.target;
+    const { name, value } = event.target;
 
     setCv((prevState) => {
       return {
@@ -92,7 +93,8 @@ export default function Main() {
   };
 
   const handleEducationChange = (event, id) => {
-    const { name, type, value } = event.target;
+    const { name, value } = event.target;
+
     setCv((prevState) => {
       return {
         ...prevState,
@@ -105,6 +107,7 @@ export default function Main() {
         }),
       };
     });
+    console.log(cv.educations);
   };
 
   const handleEducationAddition = (event) => {
@@ -137,6 +140,14 @@ export default function Main() {
       };
     });
   };
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
+  const handleReset = () => {
+    setCv(emptyCv);
+  };
 
   return (
     <div className="main">
@@ -149,8 +160,10 @@ export default function Main() {
         onChangeExperience={handleExperienceChange}
         onAddExperience={handleExperienceAddition}
         onDeleteExperience={handleExperienceDelete}
+        handlePrint={handlePrint}
+        handleReset={handleReset}
       />
-      <CvPreview cv={cv}></CvPreview>
+      <CvPreview cv={cv} ref={componentRef}></CvPreview>
     </div>
   );
 }

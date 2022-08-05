@@ -12,6 +12,8 @@ export default function CvForm({
   onChangeEducation,
   onAddEducation,
   onDeleteEducation,
+  handlePrint,
+  handleReset,
 }) {
   return (
     <div className="cv-form">
@@ -31,6 +33,10 @@ export default function CvForm({
         onAddExperience={onAddExperience}
         onDeleteExperience={onDeleteExperience}
       ></Experience>
+      <div className="utilityButtons">
+        <button onClick={(e) => handleReset()}>Reset</button>
+        <button onClick={() => handlePrint()}>Generate PDF</button>
+      </div>
     </div>
   );
 }
