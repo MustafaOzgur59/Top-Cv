@@ -2,7 +2,7 @@
 
 A React app I made in accordance with the The Odin Project Javascript cirriculum.Allows users to create their cv in a simple template.
 
-[Live Demo]() :point_left:
+[Live Demo](https://mustafaozgur59.github.io/Top-Cv/) :point_left:
 
 ## Getting started
 
