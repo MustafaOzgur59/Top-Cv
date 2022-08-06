@@ -7,7 +7,7 @@ A React app I made in accordance with the The Odin Project Javascript cirriculum
 ## Getting started
 
 ```
-git clone the prpoject
+git clone the project
 cd cv-application
 npm install
 npm start
